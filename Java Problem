@@ -1,0 +1,51 @@
+package ArrayList;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.management.loading.PrivateClassLoader;
+
+public class Ejercicio_ArrayList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int suma = 0;
+		int media =0;
+		int SuperioresQueLaMedia = 0;
+		
+		ArrayList<Integer> listaNumeros = new ArrayList<Integer>();
+		Scanner entrada = new Scanner(System.in);
+		System.out.print("Ingresa numeros: ");
+		
+		int numero = entrada.nextInt();
+		listaNumeros.add(numero);
+		
+		while(numero!=0) {
+			
+			System.out.print("Ingresa numeros: ");
+			numero = entrada.nextInt();
+			listaNumeros.add(numero);
+			media++;
+	
+		}
+		
+		for(int obj: listaNumeros) {
+			suma += obj;
+			
+		}
+		
+		media = suma/media;
+		
+		for(int obj1: listaNumeros) {
+			if(media<obj1) {
+				SuperioresQueLaMedia++;
+			}
+		}
+		
+		System.out.println("La suma de todos los numeros es: "+suma+" y su media es: "+media+" y solo "+ SuperioresQueLaMedia+ " de los numeros que ingresaste son mayores que la media.");
+		entrada.close();
+		
+	}
+	
+}
